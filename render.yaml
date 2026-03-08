@@ -1,11 +1,10 @@
 services:
   - type: web
-      name: freewave-proxy
-          env: node
-              plan: free
-                  buildCommand: "pnpm install"
-                      startCommand: "node src/index.js"
-                          envVars:
-                                - key: NODE_VERSION
-                                        value: 20
-                                        
+    name: freewave-proxy
+    env: node
+    plan: free
+    buildCommand: "pnpm install"
+    startCommand: "node src/index.js"
+    envVars:
+      - key: NODE_VERSION
+        value: 20
