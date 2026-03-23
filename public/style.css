@@ -6,15 +6,15 @@
 }
 
 :root {
-  --bg: #000000;
-  --surface: #1a1a1a;
-  --surface2: #2d2d2d;
-  --border: #404040;
-  --accent: #ffffff;
-  --accent2: #e0e0e0;
-  --text: #ffffff;
-  --text-muted: #a0a0a0;
-  --danger: #ff4444;
+  --bg: #0f0f13;
+  --surface: #1a1a24;
+  --surface2: #22222e;
+  --border: #2e2e3e;
+  --accent: #a78bfa;
+  --accent2: #38bdf8;
+  --text: #e2e2f0;
+  --text-muted: #8888aa;
+  --danger: #f87171;
   --radius: 12px;
   --radius-sm: 8px;
 }
