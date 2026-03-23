@@ -173,9 +173,10 @@ frameContainer.addEventListener("load", (e) => {
 const panicBtn = document.getElementById("panic-btn");
 const themeToggle = document.getElementById("theme-toggle");
 
-// Panic button - open Google Classroom in a new tab
+// Panic button - close proxy and open Google Classroom in a new tab
 function triggerPanic() {
   window.open("https://classroom.google.com", "_blank");
+  showHome();
 }
 
 panicBtn.addEventListener("click", triggerPanic);
