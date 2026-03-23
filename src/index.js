@@ -1,19 +1,23 @@
 import { createServer } from "node:http";
 import { fileURLToPath } from "url";
 import { hostname } from "node:os";
-import { server as wisp, logging } from "@mercuryworkshop/wisp-js";
+import { server as wisp } from "@mercuryworkshop/wisp-js";
 import Fastify from "fastify";
 import fastifyStatic from "@fastify/static";
 
 import { scramjetPath } from "@mercuryworkshop/scramjet/path";
 import { libcurlPath } from "@mercuryworkshop/libcurl-transport";
-import { baremuxPath } from "@mercuryworkshop/bare-mux";
+
+// Import baremuxPath from the CommonJS module
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
+const { baremuxPath } = require("@mercuryworkshop/bare-mux/node");
 
 const publicPath = fileURLToPath(new URL("../public/", import.meta.url));
 
 // Wisp Configuration: Refer to the documentation at https://www.npmjs.com/package/@mercuryworkshop/wisp-js
 
-logging.set_level(logging.NONE);
+// Wisp logging is not available in this version
 Object.assign(wisp.options, {
 	allow_udp_streams: false,
 	hostname_blacklist: [/example\.com/],

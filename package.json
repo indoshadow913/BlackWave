@@ -1,7 +1,7 @@
 {
-	"name": "freewave-proxy",
+	"name": "t-solace-proxy",
 	"version": "2.0.0",
-	"description": "The demo application for Scramjet, a high-performance web proxy.",
+	"description": "T-Solace Proxy - High-performance web proxy for unrestricted browsing",
 	"type": "module",
 	"engines": {
 		"npm": ">=7.0.0",
