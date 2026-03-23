@@ -173,9 +173,9 @@ frameContainer.addEventListener("load", (e) => {
 const panicBtn = document.getElementById("panic-btn");
 const themeToggle = document.getElementById("theme-toggle");
 
-// Panic button - navigate to Google Classroom
+// Panic button - open Google Classroom in a new tab
 function triggerPanic() {
-  navigate("https://classroom.google.com");
+  window.open("https://classroom.google.com", "_blank");
 }
 
 panicBtn.addEventListener("click", triggerPanic);

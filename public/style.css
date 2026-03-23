@@ -57,24 +57,24 @@ header {
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  position: relative;
 }
 
 .panic-btn, .theme-toggle {
-  position: absolute;
+  position: fixed;
   top: 20px;
   background: none;
   border: none;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   cursor: pointer;
-  padding: 8px;
+  padding: 10px;
   border-radius: 50%;
   transition: transform 0.2s, background 0.2s;
+  z-index: 9999;
 }
 
 .panic-btn:hover, .theme-toggle:hover {
-  transform: scale(1.1);
-  background: rgba(167, 139, 250, 0.1);
+  transform: scale(1.15);
+  background: rgba(167, 139, 250, 0.2);
 }
 
 .panic-btn {
