@@ -167,3 +167,50 @@ frameContainer.addEventListener("load", (e) => {
     } catch (_) {}
   }
 }, true);
+
+
+// ── Panic Button ──────────────────────────────────────────────────────────────
+const panicBtn = document.getElementById("panic-btn");
+const themeToggle = document.getElementById("theme-toggle");
+
+// Panic button - navigate to Google Classroom
+function triggerPanic() {
+  navigate("https://classroom.google.com");
+}
+
+panicBtn.addEventListener("click", triggerPanic);
+
+// Keyboard shortcut for panic button (= key)
+document.addEventListener("keydown", (e) => {
+  if (e.key === "=" && !e.ctrlKey && !e.metaKey && !e.altKey) {
+    e.preventDefault();
+    triggerPanic();
+  }
+});
+
+// ── Theme Toggle ──────────────────────────────────────────────────────────────
+function toggleTheme() {
+  const html = document.documentElement;
+  const isDark = html.getAttribute("data-theme") === "dark";
+  
+  if (isDark) {
+    html.removeAttribute("data-theme");
+    localStorage.setItem("theme", "light");
+    themeToggle.textContent = "🌙";
+  } else {
+    html.setAttribute("data-theme", "dark");
+    localStorage.setItem("theme", "dark");
+    themeToggle.textContent = "☀️";
+  }
+}
+
+// Load saved theme preference
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme === "dark") {
+  document.documentElement.setAttribute("data-theme", "dark");
+  themeToggle.textContent = "☀️";
+} else {
+  themeToggle.textContent = "🌙";
+}
+
+themeToggle.addEventListener("click", toggleTheme);
