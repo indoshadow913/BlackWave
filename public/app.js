@@ -180,13 +180,21 @@ function triggerPanic() {
 
 panicBtn.addEventListener("click", triggerPanic);
 
-// Keyboard shortcut for panic button (= key)
+// Keyboard shortcut for panic button (= key) - works globally
+window.addEventListener("keydown", (e) => {
+  if (e.key === "=" && !e.ctrlKey && !e.metaKey && !e.altKey) {
+    e.preventDefault();
+    triggerPanic();
+  }
+}, true);
+
+// Also intercept at document level
 document.addEventListener("keydown", (e) => {
   if (e.key === "=" && !e.ctrlKey && !e.metaKey && !e.altKey) {
     e.preventDefault();
     triggerPanic();
   }
-});
+}, true);
 
 // ── Theme Toggle ──────────────────────────────────────────────────────────────
 function toggleTheme() {
