@@ -112,6 +112,41 @@ header {
   font-size: 0.95rem;
 }
 
+/* ── INSTRUCTIONS ── */
+.instructions {
+  width: 100%;
+  max-width: 680px;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.instructions h3 {
+  color: var(--accent);
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.instructions ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.instructions li {
+  color: var(--text);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.instructions strong {
+  color: var(--accent2);
+}
+
 /* ── SEARCH BAR ── */
 .search-container {
   width: 100%;
